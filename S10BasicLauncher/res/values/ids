@@ -1,0 +1,4 @@
+<resources>
+    <item type="id" name="APPWIDGET_HOST_ID" />
+    <item type="id" name="REQUEST_PICK_APPWIDGET" />
+</resources>
