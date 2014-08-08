@@ -1,0 +1,51 @@
+	public void createShortcut(Intent intent){
+		Intent.ShortcutIconResource iconResource = intent.getParcelableExtra(Intent.EXTRA_SHORTCUT_ICON_RESOURCE);
+		Bitmap icon                              = intent.getParcelableExtra(Intent.EXTRA_SHORTCUT_ICON);
+		String shortcutLabel                     = intent.getStringExtra(Intent.EXTRA_SHORTCUT_NAME);
+		Intent shortIntent                       = intent.getParcelableExtra(Intent.EXTRA_SHORTCUT_INTENT);
+		
+		if (icon==null){
+			if (iconResource!=null){
+				Resources resources =null;
+				try {
+					resources = pm.getResourcesForApplication(iconResource.packageName);
+				} catch (NameNotFoundException e) {
+					e.printStackTrace();
+				} 
+				if (resources != null) {
+				    int id = resources.getIdentifier(iconResource.resourceName, null, null); 
+				    if(resources.getDrawable(id) instanceof StateListDrawable) {
+				    	Drawable d = ((StateListDrawable)resources.getDrawable(id)).getCurrent();
+				    	icon = ((BitmapDrawable)d).getBitmap();
+				    }else
+				    	icon = ((BitmapDrawable)resources.getDrawable(id)).getBitmap();
+				}
+			}
+		}
+		
+
+		if (shortcutLabel!=null && shortIntent!=null && icon!=null){
+			LayoutParams lp = new LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT,LinearLayout.LayoutParams.WRAP_CONTENT);
+			lp.leftMargin = 100;
+			lp.topMargin = (int) 100;
+				
+			LayoutInflater li = (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+			LinearLayout ll = (LinearLayout) li.inflate(R.layout.drawer_item, null);
+				
+			((ImageView)ll.findViewById(R.id.icon_image)).setImageBitmap(icon);
+			((TextView)ll.findViewById(R.id.icon_text)).setText(shortcutLabel);
+				
+			ll.setOnLongClickListener(new OnLongClickListener() {
+					
+				@Override
+				public boolean onLongClick(View v) {
+					v.setOnTouchListener(new AppTouchListener());
+					return false;
+				}
+			});
+				
+			ll.setTag(shortIntent);
+			homeView.addView(ll, lp);
+		}
+		
+	}
