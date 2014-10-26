@@ -1,0 +1,130 @@
+@SuppressWarnings("deprecation")
+	public void themePacs() {
+	    	//theming vars-----------------------------------------------
+			final int ICONSIZE = Tools.numtodp(65, MainActivity.this);
+			Resources themeRes = null;
+			String resPacName =globalPrefs.getString("theme", "");
+			String iconResource = null;
+			int intres=0;
+			int intresiconback = 0;
+			int intresiconfront = 0;
+			int intresiconmask = 0;
+			float scaleFactor = 1.0f;
+			
+			Paint p = new Paint(Paint.FILTER_BITMAP_FLAG);
+			p.setAntiAlias(true);
+			
+			Paint origP = new Paint(Paint.FILTER_BITMAP_FLAG);
+			origP.setAntiAlias(true);
+			
+			Paint maskp= new Paint(Paint.FILTER_BITMAP_FLAG);
+			maskp.setAntiAlias(true);
+			maskp.setXfermode(new PorterDuffXfermode(Mode.DST_OUT));
+			
+			if (resPacName.compareTo("")!=0){
+				try{themeRes =pm.getResourcesForApplication(resPacName);}catch(Exception e){};
+				if (themeRes!=null){
+					String[] backAndMaskAndFront =ThemeTools.getIconBackAndMaskResourceName(themeRes,resPacName);
+					if (backAndMaskAndFront[0]!=null)
+						intresiconback=themeRes.getIdentifier(backAndMaskAndFront[0],"drawable",resPacName);
+					if (backAndMaskAndFront[1]!=null)
+						intresiconmask=themeRes.getIdentifier(backAndMaskAndFront[1],"drawable",resPacName);
+					if (backAndMaskAndFront[2]!=null)
+					intresiconfront=   themeRes.getIdentifier(backAndMaskAndFront[2],"drawable",resPacName);
+				}
+			}
+			
+			Options uniformOptions = new BitmapFactory.Options();
+			uniformOptions.inScaled=false;
+			uniformOptions.inDither=false;
+			uniformOptions.inPreferredConfig = Bitmap.Config.ARGB_8888;
+			
+			Canvas origCanv;
+			Canvas canvas;
+			scaleFactor=ThemeTools.getScaleFactor(themeRes,resPacName);
+			Bitmap back=null;
+			Bitmap mask=null;
+			Bitmap front=null;
+			Bitmap scaledBitmap = null;
+			Bitmap scaledOrig = null;
+			Bitmap orig = null;
+			
+			if (resPacName.compareTo("")!=0 && themeRes!=null){
+				try{
+					if (intresiconback!=0)
+						back =BitmapFactory.decodeResource(themeRes,intresiconback,uniformOptions);
+				}catch(Exception e){}
+				try{
+					if (intresiconmask!=0)
+						mask = BitmapFactory.decodeResource(themeRes,intresiconmask,uniformOptions);
+				}catch(Exception e){}
+				try{
+					if (intresiconfront!=0)
+						front = BitmapFactory.decodeResource(themeRes,intresiconfront,uniformOptions);
+				}catch(Exception e){}
+			}
+			//theming vars-----------------------------------------------		    
+		    BitmapFactory.Options options = new BitmapFactory.Options();
+		    options.inJustDecodeBounds = false;
+		    options.inPreferredConfig = Config.RGB_565;
+		    options.inDither = true;
+		    
+		    for(int I=0;I<pacs.length;I++) {
+				if (themeRes!=null){
+					iconResource=null;
+					intres=0;
+					iconResource=ThemeTools.getResourceName(themeRes, resPacName, "ComponentInfo{"+pacs[I].packageName+"/"+pacs[I].name+"}");
+					if (iconResource!=null){
+						intres = themeRes.getIdentifier(iconResource,"drawable",resPacName);
+					}
+					
+				    if (intres!=0){//has single drawable for app
+				    	pacs[I].icon = new BitmapDrawable(BitmapFactory.decodeResource(themeRes,intres,uniformOptions));
+					}else{
+						orig=Bitmap.createBitmap(pacs[I].icon.getIntrinsicWidth(), pacs[I].icon.getIntrinsicHeight(), Bitmap.Config.ARGB_8888);
+						pacs[I].icon.setBounds(0, 0, pacs[I].icon.getIntrinsicWidth(), pacs[I].icon.getIntrinsicHeight());
+						pacs[I].icon.draw(new Canvas(orig));
+					
+						scaledOrig =Bitmap.createBitmap(ICONSIZE, ICONSIZE, Config.ARGB_8888);
+						scaledBitmap = Bitmap.createBitmap(ICONSIZE, ICONSIZE, Config.ARGB_8888);
+						canvas = new Canvas(scaledBitmap);
+						if (back!=null){
+							canvas.drawBitmap(back, Tools.getResizedMatrix(back, ICONSIZE, ICONSIZE), p);
+						}
+						
+						origCanv=new Canvas(scaledOrig);
+						orig=Tools.getResizedBitmap(orig, ((int)(ICONSIZE*scaleFactor)), ((int)(ICONSIZE*scaleFactor)));
+						origCanv.drawBitmap(orig, scaledOrig.getWidth()-(orig.getWidth()/2)-scaledOrig.getWidth()/2 ,scaledOrig.getWidth()-(orig.getWidth()/2)-scaledOrig.getWidth()/2, origP);
+						
+						if (mask!=null){
+							origCanv.drawBitmap(mask,Tools.getResizedMatrix(mask, ICONSIZE, ICONSIZE), maskp);
+						}
+					
+						if (back!=null){
+							canvas.drawBitmap(Tools.getResizedBitmap(scaledOrig,ICONSIZE,ICONSIZE), 0, 0,p);
+						}else
+							canvas.drawBitmap(Tools.getResizedBitmap(scaledOrig,ICONSIZE,ICONSIZE), 0, 0,p);
+						
+						if (front!=null)
+						    canvas.drawBitmap(front,Tools.getResizedMatrix(front, ICONSIZE, ICONSIZE), p);
+						
+						pacs[I].icon = new BitmapDrawable(scaledBitmap);
+					}
+				}		
+		    }
+
+		    
+		    front=null;
+		    back=null;
+		    mask=null;
+		    scaledOrig=null;
+		    orig=null;
+		    scaledBitmap=null;
+		    canvas=null;
+		    origCanv=null;
+		    p=null;
+		    maskp=null;
+		    resPacName=null;
+		    iconResource=null;
+			intres=0;
+	}
