@@ -132,54 +132,6 @@ public class ThemeTools {
 		return resource;
 	}
 	
-	public static Vector<String> getAllResourceNames(Resources res,String packageName){
-		Vector<String> resources = new Vector<String>();
-		XmlResourceParser xrp = null;
-		XmlPullParser xpp=null;
-			try{
-			int n;
-	        if ((n = res.getIdentifier("appfilter", "xml", packageName)) != 0) {
-	        	xrp = res.getXml(n);
-	        } else {
-	            XmlPullParserFactory factory = XmlPullParserFactory.newInstance();
-	            factory.setValidating(false);
-	            xpp = factory.newPullParser();
-	            InputStream raw = res.getAssets().open("appfilter.xml");
-	            xpp.setInput(raw, null);
-	        }
-	     
-	        if (n!=0){
-		        while (xrp.getEventType() != XmlResourceParser.END_DOCUMENT) {    
-		                if (xrp.getEventType()==2){
-		                	try{
-		                	String s = xrp.getName();
-			                if (s.equals("item")) {
-				                	resources.add(xrp.getAttributeValue(1));
-			                }
-		                	}catch(Exception e){}
-		                }
-		            xrp.next();
-		        }
-	        }
-	        else{
-	        	while (xpp.getEventType() != XmlPullParser.END_DOCUMENT) {    
-	                if (xpp.getEventType()==2){
-	                	try{
-	                	String s = xpp.getName();
-	                	if (s.equals("item")) {
-		                		resources.add(xrp.getAttributeValue(1));
-		                }
-	                	}catch(Exception e){}
-	                }
-	            xpp.next();
-	        }
-	        }
-		}catch(Exception e){
-			System.out.println(e);
-		}
-		return resources;
-	}
-	
 	
 	public static String [] getIconBackAndMaskResourceName(Resources res,String packageName){
 		String[] resource = new String[3];
