@@ -1,0 +1,159 @@
+{
+    "logs": [
+        {
+            "outputFile": "/home/michael/StudioProjects/BasicLauncher/app/build/intermediates/res/merged/debug/values-v14_values-v14.arsc.flat",
+            "map": [
+                {
+                    "source": "/home/michael/StudioProjects/BasicLauncher/app/src/main/res/values-v14/styles.xml",
+                    "from": {
+                        "startLines": "7",
+                        "startColumns": "4",
+                        "startOffsets": "220",
+                        "endLines": "9",
+                        "endColumns": "12",
+                        "endOffsets": "366"
+                    },
+                    "to": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endLines": "4",
+                        "endColumns": "12",
+                        "endOffsets": "201"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "/home/michael/StudioProjects/BasicLauncher/app/build/intermediates/res/merged/debug/values-v11_values-v11.arsc.flat",
+            "map": [
+                {
+                    "source": "/home/michael/StudioProjects/BasicLauncher/app/src/main/res/values-v11/styles.xml",
+                    "from": {
+                        "startLines": "6",
+                        "startColumns": "4",
+                        "startOffsets": "177",
+                        "endLines": "8",
+                        "endColumns": "12",
+                        "endOffsets": "309"
+                    },
+                    "to": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endLines": "4",
+                        "endColumns": "12",
+                        "endOffsets": "187"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "/home/michael/StudioProjects/BasicLauncher/app/build/intermediates/res/merged/debug/values_values.arsc.flat",
+            "map": [
+                {
+                    "source": "/home/michael/StudioProjects/BasicLauncher/app/src/main/res/values/colors.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "53",
+                        "endOffsets": "104"
+                    }
+                },
+                {
+                    "source": "/home/michael/StudioProjects/BasicLauncher/app/src/main/res/values/dimens.xml",
+                    "from": {
+                        "startLines": "3,4",
+                        "startColumns": "4,4",
+                        "startOffsets": "89,147",
+                        "endColumns": "57,55",
+                        "endOffsets": "142,198"
+                    },
+                    "to": {
+                        "startLines": "3,4",
+                        "startColumns": "4,4",
+                        "startOffsets": "109,167",
+                        "endColumns": "57,55",
+                        "endOffsets": "162,218"
+                    }
+                },
+                {
+                    "source": "/home/michael/StudioProjects/BasicLauncher/app/src/main/res/values/strings.xml",
+                    "from": {
+                        "startLines": "4,3,5,7,8,6",
+                        "startColumns": "4,4,4,4,4,4",
+                        "startOffsets": "108,56,161,256,302,214",
+                        "endColumns": "52,51,52,45,44,41",
+                        "endOffsets": "156,103,209,297,342,251"
+                    },
+                    "to": {
+                        "startLines": "9,10,11,12,13,14",
+                        "startColumns": "4,4,4,4,4,4",
+                        "startOffsets": "421,474,526,579,625,670",
+                        "endColumns": "52,51,52,45,44,41",
+                        "endOffsets": "469,521,574,620,665,707"
+                    }
+                },
+                {
+                    "source": "/home/michael/StudioProjects/BasicLauncher/app/src/main/res/values/ids.xml",
+                    "from": {
+                        "startLines": "1,2,3,4",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "16,64,117,169",
+                        "endColumns": "47,52,51,48",
+                        "endOffsets": "59,112,164,213"
+                    },
+                    "to": {
+                        "startLines": "5,6,7,8",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "223,270,322,373",
+                        "endColumns": "46,51,50,47",
+                        "endOffsets": "265,317,368,416"
+                    }
+                },
+                {
+                    "source": "/home/michael/StudioProjects/BasicLauncher/app/src/main/res/values/styles.xml",
+                    "from": {
+                        "startLines": "6,15",
+                        "startColumns": "4,4",
+                        "startOffsets": "186,510",
+                        "endLines": "12,17",
+                        "endColumns": "12,12",
+                        "endOffsets": "472,665"
+                    },
+                    "to": {
+                        "startLines": "15,22",
+                        "startColumns": "4,4",
+                        "startOffsets": "712,1003",
+                        "endLines": "21,24",
+                        "endColumns": "12,12",
+                        "endOffsets": "998,1158"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "/home/michael/StudioProjects/BasicLauncher/app/build/intermediates/res/merged/debug/values-sw720dp-land-v13_values-sw720dp-land-v13.arsc.flat",
+            "map": [
+                {
+                    "source": "/home/michael/StudioProjects/BasicLauncher/app/src/main/res/values-sw720dp-land/dimens.xml",
+                    "from": {
+                        "startLines": "6",
+                        "startColumns": "4",
+                        "startOffsets": "200",
+                        "endColumns": "58",
+                        "endOffsets": "254"
+                    },
+                    "to": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "58",
+                        "endOffsets": "109"
+                    }
+                }
+            ]
+        }
+    ]
+}

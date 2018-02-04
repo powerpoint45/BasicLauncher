@@ -1,0 +1,38 @@
+[
+    {
+        "merged": "/home/michael/StudioProjects/BasicLauncher/app/build/intermediates/res/merged/debug/drawable-nodpi_up_arrow.png.flat",
+        "source": "/home/michael/StudioProjects/BasicLauncher/app/src/main/res/drawable-nodpi/up_arrow.png"
+    },
+    {
+        "merged": "/home/michael/StudioProjects/BasicLauncher/app/build/intermediates/res/merged/debug/layout_drawer_item.xml.flat",
+        "source": "/home/michael/StudioProjects/BasicLauncher/app/src/main/res/layout/drawer_item.xml"
+    },
+    {
+        "merged": "/home/michael/StudioProjects/BasicLauncher/app/build/intermediates/res/merged/debug/drawable-xhdpi_ic_launcher.png.flat",
+        "source": "/home/michael/StudioProjects/BasicLauncher/app/src/main/res/drawable-xhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/home/michael/StudioProjects/BasicLauncher/app/build/intermediates/res/merged/debug/drawable-xxhdpi_ic_launcher.png.flat",
+        "source": "/home/michael/StudioProjects/BasicLauncher/app/src/main/res/drawable-xxhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/home/michael/StudioProjects/BasicLauncher/app/build/intermediates/res/merged/debug/drawable-hdpi_ic_launcher.png.flat",
+        "source": "/home/michael/StudioProjects/BasicLauncher/app/src/main/res/drawable-hdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/home/michael/StudioProjects/BasicLauncher/app/build/intermediates/res/merged/debug/menu_main.xml.flat",
+        "source": "/home/michael/StudioProjects/BasicLauncher/app/src/main/res/menu/main.xml"
+    },
+    {
+        "merged": "/home/michael/StudioProjects/BasicLauncher/app/build/intermediates/res/merged/debug/drawable-nodpi_handle.9.png.flat",
+        "source": "/home/michael/StudioProjects/BasicLauncher/app/src/main/res/drawable-nodpi/handle.9.png"
+    },
+    {
+        "merged": "/home/michael/StudioProjects/BasicLauncher/app/build/intermediates/res/merged/debug/layout_activity_main.xml.flat",
+        "source": "/home/michael/StudioProjects/BasicLauncher/app/src/main/res/layout/activity_main.xml"
+    },
+    {
+        "merged": "/home/michael/StudioProjects/BasicLauncher/app/build/intermediates/res/merged/debug/drawable-mdpi_ic_launcher.png.flat",
+        "source": "/home/michael/StudioProjects/BasicLauncher/app/src/main/res/drawable-mdpi/ic_launcher.png"
+    }
+]
