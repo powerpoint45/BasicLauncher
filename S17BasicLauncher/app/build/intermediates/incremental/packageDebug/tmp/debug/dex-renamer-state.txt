@@ -1,0 +1,4 @@
+#Wed Dec 05 12:17:16 GMT 2018
+base.0=/home/michael/StudioProjects/BasicLauncher/app/build/intermediates/transforms/dexMerger/debug/0
+path.0=classes.dex
+renamed.0=classes.dex

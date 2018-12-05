@@ -1,0 +1,7 @@
+#Internal package file, do not edit.
+#Wed Dec 05 12:17:16 GMT 2018
+0.baseType=DIRECTORY
+0.base=/home/michael/StudioProjects/BasicLauncher/app/build/intermediates/transforms/dexMerger/debug/0
+0.path=classes.dex
+0.set=DEX
+count=1
